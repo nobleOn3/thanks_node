@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+require('dotenv').config();
 
 
 // Following the "Single query" approach from: https://node-postgres.com/features/pooling#single-query
@@ -20,6 +21,7 @@ app.use(express.static(__dirname + '/public'));
 // This says that we want the function "getPerson" below to handle
 // any requests that come to the /getPerson endpoint
 app.get('/getUser', getUser);
+app.post('/register', registerUser);
 
 // Start the server running
 app.listen(app.get('port'), function() {
@@ -89,3 +91,7 @@ function getUserFromDb(id, callback) {
 	});
 
 } // end of getPersonFromDb
+
+//////model.js here/////
+const dbConnectionString = process.env.DATABASE_URL;
+
