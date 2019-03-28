@@ -21,7 +21,7 @@ app.use(express.static(__dirname + '/public'));
 // This says that we want the function "getPerson" below to handle
 // any requests that come to the /getPerson endpoint
 app.get('/getUser', getUser);
-app.post('/register', registerUser);
+//app.post('/register', registerUser);
 
 // Start the server running
 app.listen(app.get('port'), function() {
