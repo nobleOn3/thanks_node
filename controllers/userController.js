@@ -29,7 +29,8 @@ function registerUser(request, response) {
     var pass = request.body.password;
 
 	userModel.addNewUser(name, pass, function(results) {
-		response.json(results);
+		//response.json(results);
+		response.redirect(307, '/home.html');
 	});
 }
 
