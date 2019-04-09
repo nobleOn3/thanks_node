@@ -116,7 +116,7 @@ function login(name, pass, callback) {
 
 		console.log("Result is: " + result);
 		console.log(result);
-		var tmp = { pass: `${ pass }`};
+		var tmp = [ { pass: `${ pass }`} ];
 		console.log(tmp);
 
 		if (tmp == result.rows) {
