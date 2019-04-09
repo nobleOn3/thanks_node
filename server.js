@@ -15,7 +15,7 @@ app.use(express.urlencoded({extended: true}));
 app.get('/getUser', userController.getUser);
 app.get('/search', userController.searchByColor);
 app.post('/register', userController.registerUser);
-app.post('/login', user.Controller.loginUser);
+app.post('/login', userController.loginUser);
 
 // Start the server running
 app.listen(app.get('port'), function() {
