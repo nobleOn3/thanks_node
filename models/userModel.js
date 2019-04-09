@@ -41,6 +41,12 @@ function getUserFromDb(id, callback) {
 
 }
 
+function addNewUser(name, callback) {
+	var results = {success:true};
+
+	callback(results);
+}
+
 module.exports = {
 	getUserFromDb:getUserFromDb
 }

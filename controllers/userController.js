@@ -27,6 +27,10 @@ function registerUser(request, response) {
 	//insert a single user into the DB
     var name = req.body.username;
 	console.log(`Inserting user: {$user} into DB!`);
+
+	userModel.addNewUser(name, function(results) {
+		res.json(results);
+	});
 }
 
 module.exports = {
