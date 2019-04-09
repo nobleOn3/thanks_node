@@ -30,7 +30,7 @@ function registerUser(request, response) {
 
 	userModel.addNewUser(name, pass, function(results) {
 		//response.json(results);
-		response.send(200, '/home.html');
+		response.redirect('/home.html');
 	});
 }
 
