@@ -61,8 +61,6 @@ function addNewUser(name, pass, callback) {
 
 		callback(null, result.rows);
 	});
-
-	callback(results);
 }
 
 module.exports = {
