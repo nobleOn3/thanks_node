@@ -48,5 +48,6 @@ function addNewUser(name, callback) {
 }
 
 module.exports = {
-	getUserFromDb:getUserFromDb
+	getUserFromDb:getUserFromDb,
+	addNewUser:addNewUser
 }
