@@ -42,8 +42,24 @@ function searchByColor(req, res) {
 	});
 }
 
+function loginUser(req, res) {
+	var name = request.body.username;
+    var pass = request.body.password;
+
+    userModel.login(name, pass, function(error, results) {
+    	if(error == "User is not recognized") {
+    	   res.redirect('/home.html');
+    	}
+
+    	else {
+    		res.redirect('/login.html');
+    	}
+    });
+}
+
 module.exports = {
 	getUser:getUser,
 	registerUser:registerUser,
-	searchByColor:searchByColor
+	searchByColor:searchByColor,
+	loginUser:loginUser
 };

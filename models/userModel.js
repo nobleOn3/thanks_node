@@ -99,8 +99,41 @@ function addNewUser(name, pass, callback) {
 	});
 }
 
+function login(name, pass, callback) {
+	console.log(`Attempting to log in: ${ name } with pass ${ pass } into DB!`);
+
+	const sql = "SELECT pass FROM users WHERE name = $1::text;";
+
+	const params = [name];
+
+	pool.query(sql, params, function(err, result) {
+		// If an error occurred...
+		if (err) {
+			console.log("Error in query: ")
+			console.log(err);
+			callback(err, null);
+		}
+
+		console.log("Result is: " + result);
+		console.log(result);
+
+		if (pass == result.rows.pass) {
+			console.log("Success");
+		}
+
+		else {
+			console.log("Failure");
+			callback("User is not recognized", null)
+		}
+
+		callback(null, result.rows);
+	});
+}
+
+
 module.exports = {
 	getUserFromDb:getUserFromDb,
 	searchByColour:searchByColour,
+	login:login,
 	addNewUser:addNewUser
 }
