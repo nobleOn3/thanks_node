@@ -101,6 +101,6 @@ function addNewUser(name, pass, callback) {
 
 module.exports = {
 	getUserFromDb:getUserFromDb,
-	searchByColour:searchByColour
+	searchByColour:searchByColour,
 	addNewUser:addNewUser
 }

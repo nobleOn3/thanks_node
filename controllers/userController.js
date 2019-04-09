@@ -42,7 +42,7 @@ function searchByColor(req, res) {
 }
 
 module.exports = {
-	getUser: getUser,
+	getUser:getUser,
 	registerUser:registerUser,
 	searchByColor:searchByColor
 };
