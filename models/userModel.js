@@ -45,7 +45,7 @@ function searchByColour(c, callback) {
 	console.log("Finding those images that are: " + c);
 
 	// Set up the SQL that we will use for our query.
-	const sql = "SELECT color FROM users WHERE color = $1::text;";
+	const sql = "SELECT color FROM users WHERE main_color = $1::text;";
 
 	// We now set up an array of all the parameters we will pass to fill the
 	// placeholder spots we left in the query.
