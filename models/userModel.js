@@ -119,6 +119,7 @@ function login(name, pass, callback) {
 
 		if (pass == result.rows.pass) {
 			console.log("Success");
+			console.log(result.rows.pass);
 			callback(null, result.rows);
 		}
 
