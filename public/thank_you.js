@@ -7,11 +7,10 @@ function searchByColor() {
 		console.log("Back from the server with:");
 		console.log(data);
 
-		for(var i = 0; i < data.list.length; i++) {
-			var image = data.list[i];
+		for(var i = 0; i < data.length; i++) {
+			var image = data[i];
 
 			console.log(image);
-
 		}
 
 		$("#ulImages").append("<li>#data.name</li>");
