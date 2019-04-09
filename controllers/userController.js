@@ -20,6 +20,5 @@ function getUser(request, response) {
 }
 
 module.exports = {
-	getUserFromDb:getUserFromDb,
 	getUser: getUser
 };
