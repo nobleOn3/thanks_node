@@ -47,7 +47,7 @@ function loginUser(req, res) {
     var pass = req.body.password;
 
     userModel.login(name, pass, function(error, results) {
-    	if(error == "User is not recognized") {
+    	if(error != "User is not recognized") {
     	   res.redirect('/home.html');
     	}
 
