@@ -1,6 +1,6 @@
 function searchByColor() {
 	console.log("Searching by color....");
-	var color = $("#color").val()
+	var color = $("#color").val();
 	console.log("Color: " + color);
 
 	$.get("/search", {color:color}, function(data) {
