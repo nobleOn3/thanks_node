@@ -119,14 +119,13 @@ function login(name, pass, callback) {
 
 		if (pass == result.rows.pass) {
 			console.log("Success");
+			callback(null, result.rows);
 		}
 
 		else {
 			console.log("Failure");
 			callback("User is not recognized", null)
 		}
-
-		callback(null, result.rows);
 	});
 }
 
