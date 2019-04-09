@@ -1,3 +1,9 @@
+const { Pool } = require("pg");
+
+// Establish a new connection to the data source specified the connection string.
+const pool = new Pool({connectionString: connectionString});
+
+
 function getUserFromDb(id, callback) {
 	console.log("Getting person from DB with id: " + id);
 
