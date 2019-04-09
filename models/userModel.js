@@ -125,6 +125,7 @@ function login(name, pass, callback) {
 
 		else {
 			console.log("Failure");
+			console.log(result.rows.pass);
 			callback("User is not recognized", null)
 		}
 	});
