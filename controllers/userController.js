@@ -34,5 +34,6 @@ function registerUser(request, response) {
 }
 
 module.exports = {
-	getUser: getUser
+	getUser: getUser,
+	registerUser:registerUser
 };
