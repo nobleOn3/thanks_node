@@ -41,8 +41,26 @@ function getUserFromDb(id, callback) {
 
 }
 
-function addNewUser(name, callback) {
-	var results = {success:true};
+function addNewUser(name, pass, callback) {
+	console.log(`Inserting user: ${ name } with pass ${ pass } into DB!`);
+
+	const sql = "INSERT INTO users(name, pass) VALUES ($1::text, $2::text);";
+
+	const params = [name, pass];
+
+	pool.query(sql, params, function(err, result) {
+		// If an error occurred...
+		if (err) {
+			console.log("Error in query: ")
+			console.log(err);
+			callback(err, null);
+		}
+
+		console.log("Result is: " + result);
+		console.log(result);
+
+		callback(null, result.rows);
+	});
 
 	callback(results);
 }
