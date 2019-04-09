@@ -119,15 +119,15 @@ function login(name, pass, callback) {
 		var tmp = { pass: `${ pass }`};
 		console.log(tmp);
 
-		if (pass == result.rows.pass) {
+		if (tmp == result.rows) {
 			console.log("Success");
-			console.log(result.rows.pass);
+			console.log(result.rows);
 			callback(null, result.rows);
 		}
 
 		else {
 			console.log("Failure");
-			console.log(result.rows.pass);
+			console.log(result.rows);
 			callback("User is not recognized", null)
 		}
 	});
