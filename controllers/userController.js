@@ -25,7 +25,7 @@ function getUser(request, response) {
 
 function registerUser(request, response) {
 	//insert a single user into the DB
-    var name = req.body.username;
+    var name = request.body.username;
 	console.log(`Inserting user: {$user} into DB!`);
 
 	userModel.addNewUser(name, function(results) {
