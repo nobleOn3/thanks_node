@@ -1,4 +1,6 @@
 const userModel = require("../models/userModel.js");
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
 
 function getUser(request, response) {
 	// First get the person's id
@@ -17,6 +19,12 @@ function getUser(request, response) {
 			response.status(200).json(person);
 		}
 	});
+}
+
+function registerUser(request, response) {
+	//insert a single user into the DB
+    var name = req.body.username;
+	console.log(`Inserting user: {$user} into DB!`);
 }
 
 module.exports = {

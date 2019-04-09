@@ -13,7 +13,7 @@ app.use(express.urlencoded({extended: true}));
 // This says that we want the function "getPerson" below to handle
 // any requests that come to the /getPerson endpoint
 app.get('/getUser', userController.getUser);
-//app.post('/register', registerUser);
+app.post('/register', userController.registerUser);
 
 // Start the server running
 app.listen(app.get('port'), function() {
