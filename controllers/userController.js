@@ -29,7 +29,7 @@ function registerUser(request, response) {
 	console.log(`Inserting user: {$user} into DB!`);
 
 	userModel.addNewUser(name, function(results) {
-		res.json(results);
+		response.json(results);
 	});
 }
 
