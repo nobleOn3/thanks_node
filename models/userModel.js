@@ -63,7 +63,7 @@ function searchByColour(c, callback) {
 
 		// Log this to the console for debugging purposes.
 		//console.log("Found result: " + JSON.stringify(result.rows));
-		console.log("Result is : " + result);
+		console.log("Result is: " + result);
 		console.log(result);
 
 
