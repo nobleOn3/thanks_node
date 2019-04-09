@@ -11,7 +11,7 @@ function searchByColor() {
 			var image = data[i];
 
 			console.log(image);
-			$("#ulImages").append("<li>#image.name</li>");
+			$("#ulImages").append("<li>"+image.name+"</li>");
 		}
 	});
 }
