@@ -20,7 +20,7 @@ const pool = new Pool({connectionString: connectionString});
 app.set('port', (process.env.PORT || 5000));
 app.use(express.static(path.join(__dirname + '/public')));
 app.use(express.json());
-app.use(express.url({encoded: true}));
+app.use(express.urlencoded({extended: true}));
 
 // This says that we want the function "getPerson" below to handle
 // any requests that come to the /getPerson endpoint
