@@ -43,8 +43,8 @@ function searchByColor(req, res) {
 }
 
 function loginUser(req, res) {
-	var name = request.body.username;
-    var pass = request.body.password;
+	var name = req.body.username;
+    var pass = req.body.password;
 
     userModel.login(name, pass, function(error, results) {
     	if(error == "User is not recognized") {
