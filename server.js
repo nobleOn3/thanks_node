@@ -24,7 +24,7 @@ app.use(express.urlencoded({extended: true}));
 
 // This says that we want the function "getPerson" below to handle
 // any requests that come to the /getPerson endpoint
-app.get('/getUser', topicController.getUser);
+app.get('/getUser', userController.getUser);
 //app.post('/register', registerUser);
 
 // Start the server running
