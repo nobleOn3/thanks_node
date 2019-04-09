@@ -7,8 +7,8 @@ function searchByColor() {
 		console.log("Back from the server with:");
 		console.log(data);
 
-		$("ulImages").append("<li>item1</li>");
-		$("ulImages").append("<li>item1</li>");
-		$("ulImages").append("<li>item1</li>");
+		$("#ulImages").append("<li>item1</li>");
+		$("#ulImages").append("<li>item1</li>");
+		$("#ulImages").append("<li>item1</li>");
 	});
 }
