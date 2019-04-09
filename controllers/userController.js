@@ -33,7 +33,16 @@ function registerUser(request, response) {
 	});
 }
 
+function searchByColor(req, res) {
+	var color = req.query.color;
+
+	userModel.searchByColour(color, function(error, results) {
+		res.json(results);
+	});
+}
+
 module.exports = {
 	getUser: getUser,
-	registerUser:registerUser
+	registerUser:registerUser,
+	searchByColor:searchByColor
 };

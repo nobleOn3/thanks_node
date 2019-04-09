@@ -41,6 +41,42 @@ function getUserFromDb(id, callback) {
 
 }
 
+function searchByColour(c, callback) {
+	console.log("Finding those images that are: " + c);
+
+	// Set up the SQL that we will use for our query.
+	const sql = "SELECT color FROM users WHERE color = $1::text;";
+
+	// We now set up an array of all the parameters we will pass to fill the
+	// placeholder spots we left in the query.
+	const params = [c];
+
+	// This runs the query, and then calls the provided anonymous callback function
+	// with the results.
+	pool.query(sql, params, function(err, result) {
+		// If an error occurred...
+		if (err) {
+			console.log("Error in query: ")
+			console.log(err);
+			callback(err, null);
+		}
+
+		// Log this to the console for debugging purposes.
+		//console.log("Found result: " + JSON.stringify(result.rows));
+		console.log("Result is: " + result);
+		console.log(result);
+
+
+		// When someone else called this function, they supplied the function
+		// they wanted called when we were all done. Call that function now
+		// and pass it the results.
+
+		// (The first parameter is the error variable, so we will pass null.)
+		callback(null, result.rows);
+	});
+
+}
+
 function addNewUser(name, pass, callback) {
 	console.log(`Inserting user: ${ name } with pass ${ pass } into DB!`);
 
@@ -65,5 +101,6 @@ function addNewUser(name, pass, callback) {
 
 module.exports = {
 	getUserFromDb:getUserFromDb,
+	searchByColour:searchByColour
 	addNewUser:addNewUser
 }
